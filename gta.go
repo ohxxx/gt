@@ -23,8 +23,8 @@ func init() {
 	flag.String("a", "", "Add an alias")
 	flag.String("d", "", "Delete alias")
 	flag.String("r", "", "Rename the alias")
-	flag.String("c", "", "Clear all alias")
-	flag.String("l", "", "List of Aliases")
+	flag.Bool("c", true, "Clear all alias")
+	flag.Bool("l", true, "List of Aliases")
 }
 
 /*****************************************
@@ -79,8 +79,10 @@ func action(f *flag.Flag) {
 		store.renameAlias(f.Value.String(), arg)
 	case "c":
 		store.clearAlias()
+		fmt.Println("All aliases have been cleared")
 	case "l":
-		store.aliasList()
+		fmt.Println("List of aliases:")
+		fmt.Println(store.aliasList())
 	default:
 		fmt.Printf("No %s command.", f.Name)
 	}
