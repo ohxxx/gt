@@ -1,4 +1,4 @@
-module main
+module github.com/iiiiiixxx/gta
 
 go 1.18
 
