@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"os/exec"
 	"sync"
 
 	"github.com/mitchellh/go-homedir"
@@ -45,20 +44,21 @@ func main() {
 	}
 
 	if flag.NFlag() == 0 && len(arg) != 0 {
-		path := store.getAlias(arg)
-		if path != nil {
-			cdDir(path.(string))
-		}
+		fmt.Println(store.getAlias(arg))
+		// path := store.getAlias(arg)
+		// if path != nil {
+		// 	cdDir(path.(string))
+		// }
 	}
 
 }
 
-func cdDir(path string) {
-	cmd := exec.Command("cd", path)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	cmd.Run()
-}
+// func cdDir(path string) {
+// 	cmd := exec.Command("cd", path)
+// 	cmd.Stdout = os.Stdout
+// 	cmd.Stderr = os.Stderr
+// 	cmd.Run()
+// }
 
 func action(f *flag.Flag) {
 	arg := flag.Arg(0)
