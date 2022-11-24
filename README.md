@@ -27,11 +27,7 @@ gt -l
 **Install**
 
 ``` sh
-# Install
 go get github.com/xxx002/gt
-
-# Build
-go build
 ```
 
 **Configure**
