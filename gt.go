@@ -41,6 +41,10 @@ func main() {
 	if flag.NFlag() == 0 && len(arg) == 0 {
 		fmt.Println("No command.")
 	}
+
+	if flag.NFlag() == 0 && len(arg) != 0 {
+		fmt.Println(store.getAlias(arg))
+	}
 }
 
 func action(f *flag.Flag) {
