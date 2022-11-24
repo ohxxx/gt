@@ -10,7 +10,7 @@ import (
 func TestStorage(t *testing.T) {
 	// initStorage()
 	var home, _ = homedir.Dir()
-	var store = initStorage(home + "/.gt-storage")
+	var store = initStorage(home + "/.gt-store")
 
 	if store == nil {
 		t.Error("store is nil")

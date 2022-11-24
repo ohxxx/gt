@@ -12,7 +12,7 @@ import (
 )
 
 var home, err = homedir.Dir()
-var store = initStorage(home + "/.gt-storage")
+var store = initStorage(home + "/.gt-store")
 
 /*****************************************
 *                                        *
@@ -36,29 +36,12 @@ func main() {
 	flag.Parse()
 	flag.Visit(action)
 
-	f := flag.NewFlagSet("f", flag.ContinueOnError)
 	arg := flag.Arg(0)
 
 	if flag.NFlag() == 0 && len(arg) == 0 {
-		fmt.Fprint(f.Output(), store.aliasList(), "\n")
+		fmt.Println("No command.")
 	}
-
-	if flag.NFlag() == 0 && len(arg) != 0 {
-		fmt.Println(store.getAlias(arg))
-		// path := store.getAlias(arg)
-		// if path != nil {
-		// 	cdDir(path.(string))
-		// }
-	}
-
 }
-
-// func cdDir(path string) {
-// 	cmd := exec.Command("cd", path)
-// 	cmd.Stdout = os.Stdout
-// 	cmd.Stderr = os.Stderr
-// 	cmd.Run()
-// }
 
 func action(f *flag.Flag) {
 	arg := flag.Arg(0)
@@ -81,8 +64,8 @@ func action(f *flag.Flag) {
 		store.clearAlias()
 		fmt.Println("All aliases have been cleared")
 	case "l":
-		fmt.Println("List of aliases:")
-		fmt.Println(store.aliasList())
+		f := flag.NewFlagSet("f", flag.ContinueOnError)
+		fmt.Fprint(f.Output(), "List of aliases：\n", store.aliasList(), "\n")
 	default:
 		fmt.Printf("No %s command.", f.Name)
 	}
