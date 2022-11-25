@@ -3,7 +3,7 @@
   <p>A command-line tool to jump to a directory</p>
 </div>
 
-## Commands
+## Usage
 
 ```sh
 # Add an alias
@@ -22,15 +22,13 @@ gt -c
 gt -l    	
 ```
 
-## Usage
-
-**Install**
+## Install
 
 ``` sh
 go get github.com/xxx002/gt
 ```
 
-**Configure**
+## Configuration
 
 ```sh
 # Create a function in the configuration (.zshrc or .bashrc)
@@ -45,4 +43,4 @@ function gt() {
 
 ## Inspiration
 
-> This project comes from [yuanchuan/jd](https://github.com/yuanchuan/jd/), for personal use and study only
+> This project is inspired by [yuanchuan/jd](https://github.com/yuanchuan/jd/), for personal use and learning only
