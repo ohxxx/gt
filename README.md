@@ -44,3 +44,5 @@ function gt() {
 ## Inspiration
 
 > This project is inspired by [yuanchuan/jd](https://github.com/yuanchuan/jd/), for personal use and learning only
+
+> The font of the logo comes from [smiley-sans](https://github.com/atelier-anchor/smiley-sans)
