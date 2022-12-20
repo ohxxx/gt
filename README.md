@@ -25,7 +25,7 @@ gt -l
 ## Install
 
 ``` sh
-go get github.com/xxx002/gt
+go get github.com/ohhooxxx/gt
 ```
 
 ## Configuration
